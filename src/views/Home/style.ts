@@ -4,7 +4,7 @@ export default styled.div`
   position: relative;
 
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 
   .button-group {
     position: absolute;

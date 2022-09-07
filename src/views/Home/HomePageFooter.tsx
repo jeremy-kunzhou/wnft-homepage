@@ -9,7 +9,7 @@ const FooterContainer = styled.div`
     bottom: 20px;
     .footer-wrapper {
         height: 90px;
-        min-width: 400px; 
+        min-width: 250px; 
         max-width: 800px; 
         width: 70%;
         margin: 0px auto 0;

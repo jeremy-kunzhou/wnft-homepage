@@ -26,7 +26,7 @@ export const StyledMenu = styled.nav<StyledMenuProps>`
 
     .burger-social {
         margin-top: auto;
-        padding: 0 1rem 1rem 1rem;
+        padding: 0 1rem 3rem 1rem;
 
         ul {
             display: flex;

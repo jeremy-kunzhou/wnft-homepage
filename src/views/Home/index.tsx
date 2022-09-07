@@ -29,6 +29,7 @@ export const HomeWrapper = styled.div`
 const SectionWrapper = styled.section`
     position: relative;
     z-index: 10;
+    height: 100%;
 
     .background-wrapper {
         position: absolute;
