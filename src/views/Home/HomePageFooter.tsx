@@ -3,7 +3,7 @@ import styled from "styled-components";
 const FooterContainer = styled.div`
     width: 100%;
     position: absolute;
-    z-index: 1000;
+    z-index: 2;
     left: 50%;
     transform: translate(-50%, 0);
     bottom: 20px;

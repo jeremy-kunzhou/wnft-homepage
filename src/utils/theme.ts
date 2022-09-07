@@ -5,7 +5,7 @@ export const colors = {
   red: '#F71735',
   blue: '#276FBF',
   yellow: '#FFB71B',
-  black: '#333',
+  black: '#000',
   green: '#00FF89',
   white: '#F5F5F5',
   secondary: 'rgb(46, 215, 175)',

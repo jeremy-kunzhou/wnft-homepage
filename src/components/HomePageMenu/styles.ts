@@ -5,7 +5,7 @@ interface StyledMenuProps {
 }
 
 export const StyledMenu = styled.nav<StyledMenuProps>`
-    height: 100vh;
+    height: 85vh;
     position: fixed;
     top: 0;
     right: 0;
@@ -18,7 +18,7 @@ export const StyledMenu = styled.nav<StyledMenuProps>`
     justify-content: center;
     background: ${({ theme }) => theme.colors["background-light"]};
     text-align: left;
-    padding: 60px 1rem;
+    padding: 60px 0rem;
 
     @media (min-width: 600px) {
         display: none;
@@ -26,6 +26,7 @@ export const StyledMenu = styled.nav<StyledMenuProps>`
 
     .burger-social {
         margin-top: auto;
+        padding: 0 1rem 1rem 1rem;
 
         ul {
             display: flex;
@@ -45,7 +46,7 @@ export const StyledMenu = styled.nav<StyledMenuProps>`
                         align-items: center;
                         width: 30px;
                         svg {
-                            fill: white;
+                            fill: #4b5560;
                         }
                     }
 

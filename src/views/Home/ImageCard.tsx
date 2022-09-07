@@ -6,17 +6,26 @@ import bg2Img from "assets/images/1.png";
 import bg3Img from "assets/images/2.png";
 import bg4Img from "assets/images/3.png";
 import bg5Img from "assets/images/4.png";
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
 import theme from "utils/theme";
 
 const ImageCardContainer = styled.div`
-    /* background: rgba(255, 255, 255, 0.8); */
-    border-radius: 12px;
-    backdrop-filter: blur(4px);
+    /* width: 80%;
+    height: 70%;
+    max-width: 530px;
+    min-width: 400px;
+    max-height: 600px; */
+    position: absolute;
+    z-index: 0;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     .card-wrap {
         display: flex;
         justify-content: center;
         height: 100%;
+        width: 100%;
         transform: perspective(800px);
         transform-style: preserve-3d;
         cursor: pointer;
@@ -45,10 +54,10 @@ const ImageCardContainer = styled.div`
             .card {
                 transition: 0.6s var(--hoverEasing),
                     box-shadow 2s var(--hoverEasing);
-                box-shadow: 0 0 40px 5px rgba(255, 255, 255, 0.2),
+                /* box-shadow: 0 0 40px 5px rgba(255, 255, 255, 0.2),
                     0 0 0 1px rgba(255, 255, 255, 1),
                     0 30px 60px 0 rgba(0, 0, 0, 0.66),
-                    inset 0 0 0 5px rgb(46, 215, 175);
+                    inset 0 0 0 5px rgb(46, 215, 175); */
             }
             & + .section-content {
                 bottom: 10%;
@@ -60,25 +69,31 @@ const ImageCardContainer = styled.div`
 
     .card {
         position: relative;
-        flex: 0 0 240px;
-        width: 240px;
-        height: 320px;
+        /* flex: 0 0 240px; */
+        width: 100%;
+        height: 100%;
         top: 10%;
         /* background-color: #333; */
         overflow: hidden;
         border-radius: 10px;
-        /* box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.66); */
+
         transition: 1s var(--returnEasing);
+
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 12px;
+        backdrop-filter: blur(4px);
+        box-shadow: 0px 4px 12px rgba(65, 68, 96, 0.1);
     }
 
     .card-bg {
         opacity: 1;
         position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
+        top: 30%;
+        left: 50%;
+        width: 90%;
+        aspect-ratio: 4/3;
         padding: 20px;
+        transform: translate(-50%, -50%);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -89,16 +104,23 @@ const ImageCardContainer = styled.div`
     .section-content {
         pointer-events: none;
         position: absolute;
-        bottom: 20%;
-        width: 80%;
+        bottom: 15%;
+        width: 90%;
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
-        transition: 0.6s var(--hoverEasing),
-                    bottom 2s var(--hoverEasing);
+        transition: 0.6s var(--hoverEasing), bottom 2s var(--hoverEasing);
+
+        @media only screen and (max-width: 600px) {
+            bottom: 5%;
+        }
         .section-title {
             font-size: 1.5rem;
             font-weight: 500;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 1rem !important;
+            }
         }
 
         .section-description {
@@ -110,7 +132,13 @@ const ImageCardContainer = styled.div`
     }
 `;
 
-export const ImageCard: React.FC<{ mainImg: any, title: string, description: string }> = ({ mainImg, title, description }) => {
+export const ImageCard: React.FC<{
+    mainImg: any;
+    title: string;
+    description: string;
+    styles?: CSSProperties;
+    titleStyles?: CSSProperties;
+}> = ({ mainImg, title, description, styles = {}, titleStyles = {} }) => {
     let width = 530;
     let height = 600;
 
@@ -131,17 +159,7 @@ export const ImageCard: React.FC<{ mainImg: any, title: string, description: str
 
     return (
         <ImageCardContainer
-            style={{
-                width: `80%`,
-                height: `600px`,
-                maxWidth: "530px",
-                minWidth: "400px",
-                position: "absolute",
-                zIndex: 0,
-                top: "45%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-            }}
+            style={{ ...styles }}
             ref={containerRef}
             onMouseMove={(e) => {
                 if (containerRef.current) {
@@ -182,11 +200,16 @@ export const ImageCard: React.FC<{ mainImg: any, title: string, description: str
                             color: "red",
                         }}
                     ></div>
+                    <div className="section-content">
+                        <div
+                            className="section-title"
+                            style={{ ...titleStyles }}
+                        >
+                            {title}
+                        </div>
+                        <div className="section-description">{description}</div>
+                    </div>
                 </div>
-            </div>
-            <div className="section-content">
-                <div className="section-title">{title}</div>
-                <div className="section-description">{description}</div>
             </div>
         </ImageCardContainer>
     );

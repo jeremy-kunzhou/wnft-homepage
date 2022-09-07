@@ -38,6 +38,28 @@ const SectionWrapper = styled.section`
     }
 `;
 
+const Button = styled.button`
+    background: rgb(46, 215, 175);
+    font-size: 1rem;
+    color: ${({ theme }) => theme.colors.black};
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(46, 215, 175, 0.3);
+    }
+`;
+
+const SecondaryButton = styled(Button)`
+    background: rgba(230, 231, 242, 1);
+    &:hover {
+        background: rgba(230, 231, 242, 0.3);
+    }
+`;
+
 // NOTE: if using fullpage extensions/plugins put them here and pass it as props.
 const pluginWrapper = () => {
     /*
@@ -118,7 +140,22 @@ const Home: React.FC = () => {
                                         description={
                                             "First platform to bring blockchain to real world"
                                         }
+                                        styles={{
+                                            width: "50%",
+                                            height: "45%",
+                                            maxWidth: "500px",
+                                            minWidth: "300px",
+                                            maxHeight: "560px",
+                                            top: '40%',
+                                        }}
+                                        titleStyles={{
+                                            fontSize: '2rem'
+                                        }}
                                     />
+                                    <div className="button-group">
+                                        <Button>Launch App</Button>
+                                        <SecondaryButton>Launch App</SecondaryButton>
+                                    </div>
                                 </StyledHome>
                             </SectionWrapper>
                         </div>
@@ -129,6 +166,17 @@ const Home: React.FC = () => {
                                         mainImg={bg2Img}
                                         title={`Create Multi-privilege NFTs`}
                                         description={`Brands and dApp devs can airdrop privileges such as coupons, discount cards, rewards programs and exclusive content to target NFT holders without their permission`}
+                                        styles={{
+                                            width: "50%",
+                                            height: "60%",
+                                            maxWidth: "500px",
+                                            minWidth: "300px",
+                                            maxHeight: "560px",
+                                            top: '40%',
+                                        }}
+                                        titleStyles={{
+                                            fontSize: '1.5rem'
+                                        }}
                                     />
                                 </StyledHome>
                             </SectionWrapper>
@@ -140,7 +188,18 @@ const Home: React.FC = () => {
                                         mainImg={bg3Img}
                                         title={`Privilege Trading`}
                                         description={`With WNFT, users can trade privileges in the form of order book without losing ownership of their NFTs.`}
-                                    />
+                                        styles={{
+                                            width: "50%",
+                                            height: "60%",
+                                            maxWidth: "500px",
+                                            minWidth: "300px",
+                                            maxHeight: "560px",
+                                            top: '40%',
+                                        }}
+                                        titleStyles={{
+                                            fontSize: '1.5rem'
+                                        }}
+                                   />
                                 </StyledHome>
                             </SectionWrapper>
                         </div>
