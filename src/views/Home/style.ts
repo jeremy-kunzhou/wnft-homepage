@@ -15,6 +15,10 @@ export default styled.div`
         transform: translate(-50%, -50%);
         background-repeat: no-repeat;
         background-position: center;
+        background-size: contain;
+        @media only screen and (max-width: 600px) {
+            width: 80%;
+        }
     }
 
     .landing-description {
@@ -73,7 +77,8 @@ export default styled.div`
         text-align: center;
         transition: transform 0.6s;
         transform-style: preserve-3d;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 1px 4px rgba(65, 68, 96, 0.1);
+        border-radius: 6px;
     }
 
     .flip-card.flip-card__flipped .flip-card-inner {
@@ -85,11 +90,11 @@ export default styled.div`
         position: absolute;
         width: 100%;
         height: 100%;
-        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 6px;
     }
 
     .flip-card-front {
