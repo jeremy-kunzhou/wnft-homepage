@@ -107,17 +107,41 @@ const Home: React.FC = () => {
         // arguments are mapped in order of fullpage.js callback arguments do something
         // with the event
     };
+
+    const [cardStatus, setCardStatus] = useState([false, false, false, false]);
+
+    useEffect(() => {
+        let timer = 0;
+        const intervalHandle = setInterval(() => {
+            timer++;
+            if (timer % 6 === 1) {
+                setCardStatus([true, false, false, false]);
+            } else if (timer % 6 === 2) {
+                setCardStatus([true, true, false, false]);
+            } else if (timer % 6 === 3) {
+                setCardStatus([true, true, true, false]);
+            } else if (timer % 6 === 4) {
+                setCardStatus([true, true, true, true]);
+            } else if (timer % 6 === 0) {
+                setCardStatus([false, false, false, false]);
+            }
+        }, 1000);
+        return () => {
+            clearInterval(intervalHandle);
+        };
+    }, []);
+
     return (
         <HomeWrapper>
             <HomePageHeader price="0.3" />
             <HomePageFooter socials={SocialInfo} />
             <LineBackground />
             <ReactFullpage
-                debug /* Debug logging */
+                licenseKey={"04C13B07-E2E4445E-9311451D-A070A4CA"}
+                debug={false} /* Debug logging */
                 // Required when using extensions
                 pluginWrapper={pluginWrapper}
                 // fullpage options
-                licenseKey={"YOUR_KEY_HERE"} // Get one from https://alvarotrigo.com/fullPage/pricing/
                 navigation
                 navigationPosition={"right"}
                 showActiveTootip
@@ -135,11 +159,17 @@ const Home: React.FC = () => {
                         >
                             <SectionWrapper>
                                 <StyledHome className="app">
-                                    <ImageCard
+                                    <div
+                                        className="landing-image-container"
+                                        style={{
+                                            backgroundImage: `url(${bg1Img})`,
+                                        }}
+                                    ></div>
+                                    {/* <ImageCard
                                         mainImg={bg1Img}
                                         title={`Web3’s Native Fresh Tempt`}
                                         description={
-                                            "First platform to bring blockchain to real world"
+                                            ""
                                         }
                                         styles={{
                                             width: "50%",
@@ -147,15 +177,87 @@ const Home: React.FC = () => {
                                             maxWidth: "500px",
                                             minWidth: "300px",
                                             maxHeight: "560px",
-                                            top: '40%',
+                                            top: "40%",
                                         }}
                                         titleStyles={{
-                                            fontSize: '2rem'
+                                            fontSize: "2rem",
                                         }}
-                                    />
+                                    /> */}
+                                    <div className="landing-description">
+                                        First platform to bring blockchain to
+                                        real world
+                                    </div>
                                     <div className="button-group">
                                         <Button>Launch App</Button>
-                                        <SecondaryButton>Launch App</SecondaryButton>
+                                        <SecondaryButton>
+                                            Launch App
+                                        </SecondaryButton>
+                                    </div>
+                                    <div className="card-group">
+                                        <div
+                                            className={`flip-card ${
+                                                cardStatus[0]
+                                                    ? "flip-card__flipped"
+                                                    : ""
+                                            }`}
+                                        >
+                                            <div className="flip-card-inner">
+                                                <div className="flip-card-front">
+                                                    <div>W</div>
+                                                </div>
+                                                <div className="flip-card-back">
+                                                    <div>Wrap</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            className={`flip-card ${
+                                                cardStatus[1]
+                                                    ? "flip-card__flipped"
+                                                    : ""
+                                            }`}
+                                        >
+                                            <div className="flip-card-inner">
+                                                <div className="flip-card-front">
+                                                    <div>N</div>
+                                                </div>
+                                                <div className="flip-card-back">
+                                                    <div>Native</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            className={`flip-card ${
+                                                cardStatus[2]
+                                                    ? "flip-card__flipped"
+                                                    : ""
+                                            }`}
+                                        >
+                                            <div className="flip-card-inner">
+                                                <div className="flip-card-front">
+                                                    <div>F</div>
+                                                </div>
+                                                <div className="flip-card-back">
+                                                    <div>Fresh</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            className={`flip-card ${
+                                                cardStatus[3]
+                                                    ? "flip-card__flipped"
+                                                    : ""
+                                            }`}
+                                        >
+                                            <div className="flip-card-inner">
+                                                <div className="flip-card-front">
+                                                    <div>T</div>
+                                                </div>
+                                                <div className="flip-card-back">
+                                                    <div>Tempt</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </StyledHome>
                             </SectionWrapper>
@@ -173,10 +275,10 @@ const Home: React.FC = () => {
                                             maxWidth: "500px",
                                             minWidth: "300px",
                                             maxHeight: "560px",
-                                            top: '40%',
+                                            top: "40%",
                                         }}
                                         titleStyles={{
-                                            fontSize: '1.5rem'
+                                            fontSize: "1.5rem",
                                         }}
                                     />
                                 </StyledHome>
@@ -195,12 +297,12 @@ const Home: React.FC = () => {
                                             maxWidth: "500px",
                                             minWidth: "300px",
                                             maxHeight: "560px",
-                                            top: '40%',
+                                            top: "40%",
                                         }}
                                         titleStyles={{
-                                            fontSize: '1.5rem'
+                                            fontSize: "1.5rem",
                                         }}
-                                   />
+                                    />
                                 </StyledHome>
                             </SectionWrapper>
                         </div>

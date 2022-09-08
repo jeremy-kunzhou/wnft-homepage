@@ -197,7 +197,6 @@ export const ImageCard: React.FC<{
                         className="card-bg"
                         style={{
                             backgroundImage: `url(${mainImg})`,
-                            color: "red",
                         }}
                     ></div>
                     <div className="section-content">

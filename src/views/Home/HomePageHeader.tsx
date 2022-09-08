@@ -227,8 +227,6 @@ const HomePageHeader: React.FC<{ price: string }> = (props) => {
     useOnClickOutside(node, () => setOpen(false));
     const theme = useTheme();
 
-    console.log(theme);
-
     return (
         <MenuContainer>
             <div className={"homepage-header-wrapper"}>
