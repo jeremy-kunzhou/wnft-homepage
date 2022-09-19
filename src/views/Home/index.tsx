@@ -39,7 +39,7 @@ const SectionWrapper = styled.section`
     }
 `;
 
-const Button = styled.button`
+const Button = styled.a`
     background: rgb(46, 215, 175);
     font-size: 1rem;
     color: ${({ theme }) => theme.colors.black};
@@ -48,6 +48,9 @@ const Button = styled.button`
     height: 50px;
     width: 150px;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
         background: rgba(46, 215, 175, 0.3);
@@ -188,9 +191,9 @@ const Home: React.FC = () => {
                                         real world
                                     </div>
                                     <div className="button-group">
-                                        <Button>Launch App</Button>
-                                        <SecondaryButton>
-                                            Launch App
+                                        <Button href="https://demo.wnft.pro/" target="_blank">Launch App</Button>
+                                        <SecondaryButton href="https://demobuser.wnft.pro/#/app/kyc" target="_blank">
+                                            Promoter
                                         </SecondaryButton>
                                     </div>
                                     <div className="card-group">

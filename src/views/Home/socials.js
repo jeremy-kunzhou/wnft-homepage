@@ -9,26 +9,26 @@ export const SocialInfo = [
   {
     name: "twitter",
     logo: <FaTwitter size={22} />,
-    link: "https://twitter.com/fountainprot",
+    link: "https://twitter.com/",
   },
   {
     name: "discord",
     logo: (
       <DiscordImg />
     ),
-    link: "https://discord.gg/tTxBspHqep",
+    link: "https://discord.gg/",
   },
   {
     name: "medium",
     logo: (
       <MediumImg />
     ),
-    link: "https://medium.com/@fountainprot",
+    link: "https://medium.com/",
   },
   {
     name: "telegram",
     logo: <FaTelegramPlane size={22} />,
-    link: "https://t.me/fountainproto",
+    link: "https://t.me/",
   },
 
   {
@@ -36,13 +36,13 @@ export const SocialInfo = [
     logo: (
       <RedditImg />
     ),
-    link: "https://www.reddit.com/r/FountainProt/",
+    link: "https://www.reddit.com/r/",
   },
   {
     name: "email",
     logo: (
       <EmailImg />
     ),
-    link: "mailto: contact@fountainprotocol.com",
+    link: "mailto: contact@google.com",
   },
 ];
