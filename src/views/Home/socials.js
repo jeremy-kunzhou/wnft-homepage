@@ -8,7 +8,7 @@ import { ReactComponent as EmailImg } from "assets/images/email.svg"
 export const SocialInfo = [
   {
     name: "twitter",
-    logo: <FaTwitter size={22} />,
+    logo: <FaTwitter size={26} />,
     link: "https://twitter.com/",
   },
   {
@@ -27,7 +27,7 @@ export const SocialInfo = [
   },
   {
     name: "telegram",
-    logo: <FaTelegramPlane size={22} />,
+    logo: <FaTelegramPlane size={26} />,
     link: "https://t.me/",
   },
 

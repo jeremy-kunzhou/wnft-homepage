@@ -196,7 +196,9 @@ const Home: React.FC = () => {
                                             Promoter
                                         </SecondaryButton>
                                     </div>
-                                    <div className="card-group">
+                                    <div className="card-group" style={{
+                                        display: 'none'
+                                    }}>
                                         <div
                                             className={`flip-card ${
                                                 cardStatus[0]
