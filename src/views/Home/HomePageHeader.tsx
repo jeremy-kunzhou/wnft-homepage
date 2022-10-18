@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import homeHeaderLogo from "assets/images/logo_with_name.png";
+import homeHeaderLogo from "assets/images/logo_with_name.svg";
 import Burger from "components/Burger";
 import HomePageMenu from "components/HomePageMenu";
 import { SocialInfo } from "./socials";

@@ -97,13 +97,12 @@ const fullpages = [
     },
 ];
 
-const anchors = ["Welcome", "Introduction", "Markets"];
+const anchors = ["Welcome"];
 
 const Home: React.FC = () => {
     useEffect(() => {}, []);
 
     const sectionsColor = [...originalColors];
-    const anchors = ["Welcome", "Introduction", "Markets"];
 
     const onLeave = (origin, destination, direction) => {
         console.log("onLeave", { origin, destination, direction });
@@ -137,7 +136,7 @@ const Home: React.FC = () => {
     return (
         <HomeWrapper>
             <HomePageHeader price="0.3" />
-            <HomePageFooter socials={SocialInfo} />
+            {/* <HomePageFooter socials={SocialInfo} /> */}
             <LineBackground />
             <ReactFullpage
                 licenseKey={"04C13B07-E2E4445E-9311451D-A070A4CA"}
@@ -145,9 +144,9 @@ const Home: React.FC = () => {
                 // Required when using extensions
                 pluginWrapper={pluginWrapper}
                 // fullpage options
-                navigation
+        
                 navigationPosition={"right"}
-                showActiveTootip
+                showActiveTootip={false}
                 navigationTooltips={anchors}
                 anchors={anchors}
                 sectionSelector={SECTION_SEL}
@@ -158,7 +157,7 @@ const Home: React.FC = () => {
                         <div
                             key={"section_1"}
                             className={SEL}
-                            data-tooltip="welcom"
+                            data-tooltip="welcome"
                         >
                             <SectionWrapper>
                                 <StyledHome className="app">
@@ -193,7 +192,7 @@ const Home: React.FC = () => {
                                     <div className="button-group">
                                         <Button href="https://demo.wnft.pro/" target="_blank">Launch App</Button>
                                         <SecondaryButton href="https://demobuser.wnft.pro/#/app/kyc" target="_blank">
-                                            Promoter
+                                            Business
                                         </SecondaryButton>
                                     </div>
                                     <div className="card-group" style={{
@@ -267,7 +266,7 @@ const Home: React.FC = () => {
                                 </StyledHome>
                             </SectionWrapper>
                         </div>
-                        <div key={"section_2"} className={SEL}>
+                        {/* <div key={"section_2"} className={SEL}>
                             <SectionWrapper>
                                 <StyledHome className="app">
                                     <ImageCard
@@ -310,7 +309,7 @@ const Home: React.FC = () => {
                                     />
                                 </StyledHome>
                             </SectionWrapper>
-                        </div>
+                        </div> */}
                     </ReactFullpage.Wrapper>
                 )}
             />
