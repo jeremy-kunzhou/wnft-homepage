@@ -13,7 +13,7 @@ export const LineBackground = () => {
       },
 
       height: function () {
-        return window.innerHeight * 0.75;
+        return window.innerHeight;
       },
 
       ease: "SineInOut",

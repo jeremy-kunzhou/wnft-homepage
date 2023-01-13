@@ -11,7 +11,7 @@ export default styled.div`
         width: 50%;
         height: 45%;
         left: 50%;
-        top: 35%;
+        top: 50%;
         transform: translate(-50%, -50%);
         background-repeat: no-repeat;
         background-position: center;

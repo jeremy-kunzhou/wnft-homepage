@@ -144,7 +144,7 @@ const Home: React.FC = () => {
                 // Required when using extensions
                 pluginWrapper={pluginWrapper}
                 // fullpage options
-        
+
                 navigationPosition={"right"}
                 showActiveTootip={false}
                 navigationTooltips={anchors}
@@ -185,19 +185,36 @@ const Home: React.FC = () => {
                                             fontSize: "2rem",
                                         }}
                                     /> */}
-                                    <div className="landing-description">
+                                    <div
+                                        className="landing-description"
+                                        style={{ display: "none" }}
+                                    >
                                         First platform to bring blockchain to
-                                        real world
+                                        the real world
                                     </div>
-                                    <div className="button-group">
-                                        <Button href="https://demo.wnft.pro/" target="_blank">Launch App</Button>
-                                        <SecondaryButton href="https://demobuser.wnft.pro/#/app/kyc" target="_blank">
+                                    <div
+                                        className="button-group"
+                                        style={{ display: "none" }}
+                                    >
+                                        <Button
+                                            href="https://app.wnft.one/"
+                                            target="_blank"
+                                        >
+                                            Launch App
+                                        </Button>
+                                        <SecondaryButton
+                                            href="https://buser.wnft.one/#/app/kyc"
+                                            target="_blank"
+                                        >
                                             Business
                                         </SecondaryButton>
                                     </div>
-                                    <div className="card-group" style={{
-                                        display: 'none'
-                                    }}>
+                                    <div
+                                        className="card-group"
+                                        style={{
+                                            display: "none",
+                                        }}
+                                    >
                                         <div
                                             className={`flip-card ${
                                                 cardStatus[0]
